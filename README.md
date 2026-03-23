@@ -63,7 +63,7 @@ A comprehensive SaaS automation platform for WhatsApp with AI integration, built
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/whatsapp-saas-platform.git
+   git clone https://github.com/VamshiKrishnaBandari07/whatsapp-SaaS-platform.git
    cd whatsapp-saas-platform
    ```
 
