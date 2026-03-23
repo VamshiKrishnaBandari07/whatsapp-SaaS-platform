@@ -33,9 +33,9 @@ spec:
                     - name: ZOOKEEPER_TICK_TIME
                       value: "2000"
                   ports:
-                    - name: zookeeper-2888
-                      containerPort: 2888
                     - name: zookeeper-3888
                       containerPort: 3888
                     - name: zookeeper-2181
                       containerPort: 2181
+                    - name: zookeeper-2888
+                      containerPort: 2888

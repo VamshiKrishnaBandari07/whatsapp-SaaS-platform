@@ -13,8 +13,8 @@ spec:
         com.docker.compose.project: whatsapp-saas-platform
         com.docker.compose.service: postgres
     ports:
-        - name: postgres-5432
-          port: 5432
+        - name: postgres-5433
+          port: 5433
           protocol: TCP
           targetPort: postgres-5432
 

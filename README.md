@@ -96,6 +96,44 @@ OPENAI_API_KEY=your_openai_api_key
 OPENAI_API_BASE_URL=https://api.openai.com
 ```
 
+## Testing and Sharing
+
+There are two main ways to test and share your platform:
+
+### A. Run Locally (Fast Demo)
+
+1. **Clone the repo on your laptop:**
+   ```bash
+   git clone https://github.com/VamshiKrishnaBandari07/whatsapp-SaaS-platform.git
+   cd whatsapp-saas-platform
+   ```
+
+2. **Install dependencies and start infrastructure:**
+   ```bash
+   docker-compose up -d
+   mvn clean install
+   cd saas-application
+   mvn spring-boot:run
+   ```
+
+3. **Open your browser:**
+   Visit http://localhost:8080
+
+4. **Use ngrok to make it public:**
+   ```bash
+   # Install ngrok if not already installed
+   # Download from https://ngrok.com/download
+
+   ngrok http 8080
+   ```
+
+   Ngrok gives you a temporary public URL you can share with others.
+   Anyone visiting that URL can interact with your platform while your server is running.
+
+### B. Deploy to Cloud
+
+Follow the Deployment section below to deploy to Railway, Fly.io, or Google Cloud Run for permanent public access.
+
 ## Deployment
 
 ### Docker

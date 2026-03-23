@@ -16,7 +16,7 @@ public class WhatsAppMessageConsumer {
 
     // public WhatsAppMessageConsumer(MessageIdempotencyService idempotencyService, WorkflowEngine workflowEngine) { ... }
 
-    @KafkaListener(topics = "whatsapp.incoming", groupId = "workflow-group")
+    // @KafkaListener(topics = "whatsapp.incoming", groupId = "workflow-group")
     public void consumeIncomingMessage(String payload) {
         log.info("Processing incoming message from Kafka: {}", payload);
         try {

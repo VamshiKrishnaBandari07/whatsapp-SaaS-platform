@@ -14,14 +14,14 @@ public class IncomingWebhookController {
 
     private static final Logger log = LoggerFactory.getLogger(IncomingWebhookController.class);
 
-    private final KafkaTemplate<String, String> kafkaTemplate;
+    // private final KafkaTemplate<String, String> kafkaTemplate;
 
     @Value("${whatsapp.verify.token:my-secret-token}")
     private String verifyToken;
 
-    public IncomingWebhookController(KafkaTemplate<String, String> kafkaTemplate) {
-        this.kafkaTemplate = kafkaTemplate;
-    }
+    // public IncomingWebhookController(KafkaTemplate<String, String> kafkaTemplate) {
+    //     this.kafkaTemplate = kafkaTemplate;
+    // }
 
     /**
      * Required by Meta for Webhook URL verification.
@@ -49,7 +49,7 @@ public class IncomingWebhookController {
         log.debug("Received WhatsApp Webhook payload: {}", payload);
         
         // Push payload to Kafka for async processing (Idempotency managed by consumers)
-        kafkaTemplate.send("whatsapp.incoming", payload);
+        // kafkaTemplate.send("whatsapp.incoming", payload);
         
         // Fast return 200 OK
         return ResponseEntity.ok().build();

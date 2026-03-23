@@ -1,14 +1,14 @@
 server:
-  port: 8080
+  port: ${PORT:8080}
 
 spring:
   application:
     name: whatsapp-saas
   
   datasource:
-    url: jdbc:postgresql://localhost:5433/whatsapp_saas?sslmode=disable
-    username: saas_admin
-    password: saas_password
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5433/whatsapp_saas?sslmode=disable}
+    username: ${SPRING_DATASOURCE_USERNAME:saas_admin}
+    password: ${SPRING_DATASOURCE_PASSWORD:saas_password}
     driver-class-name: org.postgresql.Driver
     
   jpa:
@@ -23,11 +23,11 @@ spring:
     enabled: true
     baseline-on-migrate: true
     
-  kafka:
-    bootstrap-servers: localhost:29092
-    consumer:
-      group-id: saas-default-group
-      auto-offset-reset: earliest
+#  kafka:
+#    bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS:localhost:29092}
+#    consumer:
+#      group-id: ${SPRING_KAFKA_CONSUMER_GROUP_ID:saas-default-group}
+#      auto-offset-reset: ${SPRING_KAFKA_CONSUMER_AUTO_OFFSET_RESET:earliest}
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
@@ -44,3 +44,4 @@ whatsapp:
 openai:
   api:
     key: ${OPENAI_API_KEY:dummy_key_for_build}
+    base-url: ${OPENAI_API_BASE_URL:https://api.openai.com}

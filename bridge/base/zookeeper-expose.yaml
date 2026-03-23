@@ -13,12 +13,12 @@ spec:
         com.docker.compose.project: whatsapp-saas-platform
         com.docker.compose.service: zookeeper
     ports:
-        - name: zookeeper-2888
-          port: 2888
-          targetPort: zookeeper-2888
         - name: zookeeper-3888
           port: 3888
           targetPort: zookeeper-3888
         - name: zookeeper-2181
           port: 2181
           targetPort: zookeeper-2181
+        - name: zookeeper-2888
+          port: 2888
+          targetPort: zookeeper-2888

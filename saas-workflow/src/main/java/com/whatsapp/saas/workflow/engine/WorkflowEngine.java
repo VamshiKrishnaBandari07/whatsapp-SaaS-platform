@@ -13,13 +13,13 @@ public class WorkflowEngine {
 
     private static final Logger log = LoggerFactory.getLogger(WorkflowEngine.class);
     
-    private final KafkaTemplate<String, String> kafkaTemplate;
+    // private final KafkaTemplate<String, String> kafkaTemplate;
     // private final ConversationRepository conversationRepository;
     // private final WorkflowRepository workflowRepository;
 
-    public WorkflowEngine(KafkaTemplate<String, String> kafkaTemplate) {
-        this.kafkaTemplate = kafkaTemplate;
-    }
+    // public WorkflowEngine(KafkaTemplate<String, String> kafkaTemplate) {
+    //     this.kafkaTemplate = kafkaTemplate;
+    // }
 
     /**
      * Core state machine transition logic.
@@ -64,6 +64,6 @@ public class WorkflowEngine {
     private void sendOutgoingMessage(UUID tenantId, UUID conversationId, String text) {
         // Create an OutgoingMessageEvent JSON and push to 'whatsapp.outgoing'
         String payload = String.format("{\"tenantId\":\"%s\", \"conversationId\":\"%s\", \"text\":\"%s\"}", tenantId, conversationId, text);
-        kafkaTemplate.send("whatsapp.outgoing", payload);
+        // kafkaTemplate.send("whatsapp.outgoing", payload);
     }
 }
