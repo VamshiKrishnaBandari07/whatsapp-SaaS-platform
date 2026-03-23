@@ -1,0 +1,21 @@
+#! kustomization.yaml
+# Generated code, do not edit
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+    - 0-whatsapp-saas-platform-namespace.yaml
+    - default-network-policy.yaml
+    - kafka-deployment.yaml
+    - kafka-expose.yaml
+    - kafka-kafka_data-persistentVolumeClaim.yaml
+    - kafka-service.yaml
+    - postgres-deployment.yaml
+    - postgres-expose.yaml
+    - postgres-postgres_data-persistentVolumeClaim.yaml
+    - postgres-service.yaml
+    - redis-deployment.yaml
+    - redis-expose.yaml
+    - redis-redis_data-persistentVolumeClaim.yaml
+    - redis-service.yaml
+    - zookeeper-deployment.yaml
+    - zookeeper-expose.yaml

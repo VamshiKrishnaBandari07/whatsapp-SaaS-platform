@@ -1,0 +1,8 @@
+#! 0-whatsapp-saas-platform-namespace.yaml
+# Generated code, do not edit
+apiVersion: v1
+kind: Namespace
+metadata:
+    name: whatsapp-saas-platform
+    labels:
+        com.docker.compose.project: whatsapp-saas-platform

@@ -1,0 +1,3 @@
+com\whatsapp\saas\database\entity\TenantAwareEntity.class
+com\whatsapp\saas\database\listener\TenantEntityListener.class
+com\whatsapp\saas\database\aspect\HibernateTenantAspect.class

@@ -1,0 +1,6 @@
+com\whatsapp\saas\core\security\SecurityConfig.class
+com\whatsapp\saas\core\tenant\TenantContext.class
+com\whatsapp\saas\core\security\JwtAuthenticationFilter.class
+com\whatsapp\saas\core\failover\KafkaFailoverService.class
+com\whatsapp\saas\core\security\JwtTokenProvider.class
+com\whatsapp\saas\core\tenant\TenantFilter.class

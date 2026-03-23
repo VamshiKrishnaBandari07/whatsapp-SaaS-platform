@@ -1,0 +1,18 @@
+#! kafka-kafka_data-persistentVolumeClaim.yaml
+# Generated code, do not edit
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+    name: kafka-kafka-data
+    namespace: whatsapp-saas-platform
+    labels:
+        com.docker.compose.service: kafka
+        com.docker.compose.volume: kafka_data
+spec:
+    accessModes:
+        # TODO would need to check which services use this volume
+        - ReadWriteOnce
+    volumeMode: Filesystem
+    resources:
+        requests:
+            storage: 100Mi

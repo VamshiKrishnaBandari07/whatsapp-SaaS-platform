@@ -1,0 +1,5 @@
+com\whatsapp\saas\crm\service\BookingService.class
+com\whatsapp\saas\crm\service\CampaignEngine.class
+com\whatsapp\saas\crm\service\LeadScoringService.class
+com\whatsapp\saas\crm\service\LeadScoringService$LeadScoreCategory.class
+com\whatsapp\saas\crm\model\DealStage.class

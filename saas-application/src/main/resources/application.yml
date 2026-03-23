@@ -1,0 +1,47 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: whatsapp-saas
+  
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5433/whatsapp_saas?sslmode=disable}
+    username: ${SPRING_DATASOURCE_USERNAME:saas_admin}
+    password: ${SPRING_DATASOURCE_PASSWORD:saas_password}
+    driver-class-name: org.postgresql.Driver
+    
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    
+  kafka:
+    bootstrap-servers: ${SPRING_KAFKA_BOOTSTRAP_SERVERS:localhost:29092}
+    consumer:
+      group-id: ${SPRING_KAFKA_CONSUMER_GROUP_ID:saas-default-group}
+      auto-offset-reset: ${SPRING_KAFKA_CONSUMER_AUTO_OFFSET_RESET:earliest}
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+      
+app:
+  jwt:
+    secret: "productionReadySecretKeyWithAtLeast32BytesLengthForHmacSha256AsFallback"
+    expirationMs: 86400000
+
+whatsapp:
+  verify:
+    token: "my-secret-token"
+
+openai:
+  api:
+    key: ${OPENAI_API_KEY:dummy_key_for_build}
+    base-url: ${OPENAI_API_BASE_URL:https://api.openai.com}

@@ -1,0 +1,55 @@
+#! postgres-deployment.yaml
+# Generated code, do not edit
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: postgres
+    namespace: whatsapp-saas-platform
+    labels:
+        com.docker.compose.project: whatsapp-saas-platform
+        com.docker.compose.service: postgres
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            com.docker.compose.project: whatsapp-saas-platform
+            com.docker.compose.service: postgres
+    strategy:
+        type: Recreate
+    template:
+        metadata:
+            labels:
+                com.docker.compose.project: whatsapp-saas-platform
+                com.docker.compose.service: postgres
+                com.docker.compose.network.default: "true"
+        spec:
+            containers:
+                - name: saas-postgres
+                  image: pgvector/pgvector:pg16
+                  imagePullPolicy: IfNotPresent
+                  env:
+                    - name: POSTGRES_DB
+                      value: "whatsapp_saas"
+                    - name: POSTGRES_PASSWORD
+                      value: "saas_password"
+                    - name: POSTGRES_USER
+                      value: "saas_admin"
+                  livenessProbe:
+                    exec:
+                        command:
+                            - /bin/sh
+                            - -c
+                            - pg_isready -U saas_admin
+                    periodSeconds: 5
+                    timeoutSeconds: 5
+                    failureThreshold: 5
+                  ports:
+                    - name: postgres-5432
+                      containerPort: 5432
+                  volumeMounts:
+                    - name: var-lib-postgresql-data
+                      mountPath: /var/lib/postgresql/data
+            volumes:
+                - name: var-lib-postgresql-data
+                  persistentVolumeClaim:
+                    claimName: postgres-postgres-data

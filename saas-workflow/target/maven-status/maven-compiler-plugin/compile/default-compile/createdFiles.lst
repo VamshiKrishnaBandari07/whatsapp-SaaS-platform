@@ -1,0 +1,7 @@
+com\whatsapp\saas\workflow\service\OnboardingWizardService.class
+com\whatsapp\saas\workflow\model\WorkflowTemplateDefinition$WorkflowStep.class
+com\whatsapp\saas\workflow\engine\WorkflowEngine.class
+com\whatsapp\saas\workflow\consumer\WhatsAppMessageConsumer.class
+com\whatsapp\saas\workflow\engine\TemplateRegistryService.class
+com\whatsapp\saas\workflow\model\WorkflowTemplateDefinition$StepType.class
+com\whatsapp\saas\workflow\model\WorkflowTemplateDefinition.class

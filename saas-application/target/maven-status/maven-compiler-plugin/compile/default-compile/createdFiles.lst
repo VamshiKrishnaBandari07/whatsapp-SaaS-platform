@@ -1,0 +1,3 @@
+com\whatsapp\saas\application\SaaSApplication.class
+com\whatsapp\saas\application\controller\SaaSTenantController.class
+com\whatsapp\saas\application\controller\SaaSAdminController.class
