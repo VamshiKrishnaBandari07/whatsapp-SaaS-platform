@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: whatsapp-saas-platform
+    env: docker
+    plan: free
+    dockerCommand: "mvn spring-boot:run -pl saas-application -Dspring-boot.run.profiles=prod"
+    branch: master
+    envVars:
+      - key: PORT
+        value: 8080
